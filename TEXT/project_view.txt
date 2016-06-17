@@ -1,0 +1,26 @@
+회원가입페이지
+	이메일 인증 버튼 , api 추가
+	가입 완료후 계정 인증처리
+
+일반회원 마이페이지
+	리뷰 리스트 - 리뷰 삭제 버튼 추가
+
+사업자회원 마이페이지
+	내 홍보글, 1:1 문의, 정보수정, 회원탈퇴
+	
+관리자 페이지
+	신고내역 상세페이지 
+		
+		
+사진 업로드
+	Spring FileUpload <form enctype="multipart/form-data" method="post">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMiltipartResolver"/>
+		-multipart/form-data로 전송된 요청파라미터들을 처리
+	Property
+		-defaultEncoding - 기본 인코딩
+		-maxUploadSize - 업로드 허용 최대 Size를 byte단위로 설정  -1 무제한
+		-uploadTempDir - 업로드 파일이 저장될 임시 경로
+		-maxInMemorySize - 업로드 파일 저장할 최대 메모리 크기
+		
+파일명 저장
+	실제 file명 a.jpg  -----> 변경 file명  System.currentTimeMilis().jpg

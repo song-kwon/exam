@@ -1,0 +1,19 @@
+mvc:annotation-driven이 등록 해주는 bean들 중 HttpMessageConverter들이 있다.
+		 	-StringHttpMessageConverter : 기본 HttpMessageCOnverter로 등록이 되는데 한글처리가 안됨.
+		 	
+		 	-Jackson Json api가 classpath 상에 있는 경우
+		 		- MappingJacksonHttpMessageCOnverter가 자동으로 등록된다
+		 		  handler에 @ResponseBody가 선언되있고 return 값이
+		 		  VO : Javascript 객체 문자열로 변환된 문자열을 HTTP 응답에 등록
+		 		  List : Javascript 배열 문자열로 변환된 문자열을 HTTP 응답에 등록
+
+
+@ResponseBody : return 값을 response body에 넣어라.
+public String handle( , , )
+return type String -> 결과 String  "<b>결과</b>"
+
+
+
+<<Interface>>HttpMessageConverter
+public VO handle(, , )
+return type VO || List -> JSON형태로 리턴 
